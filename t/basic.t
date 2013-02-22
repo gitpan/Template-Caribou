@@ -1,18 +1,17 @@
 use strict;
 use warnings;
 
+use 5.10.0;
+
 use Test::More;
 
 use Test::Routine;
 use Test::Routine::Util;
 
-use Template::Caribou::Utils;
+use Template::Caribou;
+use Template::Caribou::Tags qw/ render_tag /;
 
 with 'Template::Caribou';
-
-test 'it works' => sub {
-    pass;
-};
 
 template inner => sub {
     'hello world';
@@ -55,7 +54,7 @@ test 'escaping' => sub {
     my $self = shift;
 
     is $self->render('escape_outer') 
-        => qq{<foo></foo><foo><bar\n >&lt;yay></bar></foo><foo></foo>};
+        => qq{<foo /><foo><bar>&lt;yay></bar></foo><foo />};
 
 };
 
@@ -67,12 +66,41 @@ template 'end_show' => sub {
 test 'end_show' => sub {
     my $self = shift;
 
-    is $self->render( 'end_show' ) => '<foo></foo>hello world';
+    is $self->render( 'end_show' ) => '<foo />hello world';
+};
+
+template 'attributes' => sub {
+    foo {
+        attr foo => 'bar';
+        attr 'foo';
+    };
+    foo {
+        attr a => 1, b => 2;
+        attr '+a' => 3, b => 4;
+    }
+};
+
+test attributes => sub {
+    my $self = shift;
+
+    is $self->render( 'attributes' ) => 
+        '<foo foo="bar">bar</foo><foo a="1 3" b="4" />';
+};
+
+test "print vs  say" => sub {
+    my $self = shift;
+
+    TODO: {
+        local $TODO = "Perl bug, should be fixed in 5.18";
+
+        is $self->render(sub{
+            print "one";
+            say "two";
+            print ::RAW "three";
+            say ::RAW "four";
+        }) => "onetwo\nthreefour\n";
+    }
 };
 
 run_me;
 done_testing;
-
-
-
-

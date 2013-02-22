@@ -1,20 +1,21 @@
 # NAME
 
-Template::Caribou - class-based *ML-centric templating system
+Template::Caribou - class-based HTML-centric templating system
 
 # VERSION
 
-version 0.1.0
+version 0.2.0
 
 # SYNOPSIS
 
     package MyTemplate;
 
     use Moose;
+    use Template::Caribou;
+
     with 'Template::Caribou';
 
-    use Template::Caribou::Utils;
-    use Template::Caribou::Tags::HTML;
+    use Template::Caribou::Tags::HTML qw/ :all /;
 
     has name => ( is => 'ro' );
 
@@ -35,7 +36,7 @@ version 0.1.0
 
     package main;
 
-    my $template = MyTemplate->new( name => 'Bob' );
+    my $template = MyTemplate->new( name => 'Yanick' );
     print $template->render('page');
 
 # DESCRIPTION
@@ -43,9 +44,35 @@ version 0.1.0
 WARNING: Codebase is alpha with extreme prejudice. Assume that bugs are
 teeming and that the API is subject to change.
 
-[Template::Caribou](http://search.cpan.org/perldoc?Template::Caribou) is a [Moose](http://search.cpan.org/perldoc?Moose)-based, class-centric templating system
-mostly aimed at producing sgml-like outputs (HTML, XML, SVG, etc). It is
+[Template::Caribou](http://search.cpan.org/perldoc?Template::Caribou) is a [Moose](http://search.cpan.org/perldoc?Moose)\-based, class-centric templating system
+mostly aimed at producing sgml-like outputs, mostly HTML, but also XML, SVG, etc. It is
 heavily inspired by [Template::Declare](http://search.cpan.org/perldoc?Template::Declare).
+
+For a manual on how to use `Template::Caribou`, have a peek at
+[Template::Caribou::Manual](http://search.cpan.org/perldoc?Template::Caribou::Manual).
+
+# METHODS
+
+## pretty\_render()
+
+Returns true if rendered templates are passed through the prettifier.
+
+## enable\_pretty\_render( $bool )
+
+if set to true, rendered templates will be filtered by a prettifier 
+before being returned by the `render()` method.
+
+## import\_template\_dir( $directory )
+
+Imports all the files with a `.bou` extension in _$directory_
+as templates (non-recursively).  
+
+Returns the name of the imported templates.
+
+## show( $template, @args )
+
+Outside of a template, behaves like `render()`. In a template, prints out
+the result of the rendering in addition of returning it.
 
 # SEE ALSO
 
@@ -56,11 +83,11 @@ introducing [Template::Caribou](http://search.cpan.org/perldoc?Template::Caribou
 
 # AUTHOR
 
-Yanick Champoux
+Yanick Champoux [![endorse](http://api.coderwall.com/yanick/endorsecount.png)](http://coderwall.com/yanick)
 
 # COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Yanick Champoux.
+This software is copyright (c) 2013 by Yanick Champoux.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
