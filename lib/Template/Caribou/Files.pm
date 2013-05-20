@@ -3,7 +3,7 @@ BEGIN {
   $Template::Caribou::Files::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $Template::Caribou::Files::VERSION = '0.2.0';
+  $Template::Caribou::Files::VERSION = '0.2.1';
 }
 #ABSTRACT: Role to load templates from files
 
@@ -14,8 +14,12 @@ use warnings;
 use MooseX::Role::Parameterized;
 
 parameter dirs => (
+    traits => [ 'Array' ],
     isa => 'ArrayRef',
     default => sub { [] },
+    handles => {
+        all_dirs => 'elements',
+    },
 );
 
 parameter auto_reload => (
@@ -31,8 +35,25 @@ role {
     use MooseX::SemiAffordanceAccessor;
 
     my $p = shift;
-
     my %arg = @_;
+
+    has template_dirs => (
+        traits => [ 'Array' ],
+        isa => 'ArrayRef',
+        builder => '_build_template_dirs',
+        handles => {
+            all_template_dirs => 'elements',
+            add_template_dirs => 'push',
+        },
+    );
+
+    sub _build_template_dirs { [] }
+
+    around _build_template_dirs => sub {
+        my( $ref, $self ) = @_;
+
+        return [ @{ $ref->($self) }, $p->all_dirs ];
+    };
 
     before 'render' => sub {
         $_[0]->import_template_dirs( @{$p->dirs} ) #@{ $_[0]->template_dirs } ) 
@@ -108,7 +129,7 @@ Template::Caribou::Files - Role to load templates from files
 
 =head1 VERSION
 
-version 0.2.0
+version 0.2.1
 
 =head1 SYNOPSIS
 
@@ -163,7 +184,7 @@ Defaults to false.
 
 =head1 AUTHOR
 
-Yanick Champoux
+Yanick Champoux <yanick@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 

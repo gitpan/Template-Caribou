@@ -3,7 +3,7 @@ BEGIN {
   $Template::Caribou::Formatter::Twig::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $Template::Caribou::Formatter::Twig::VERSION = '0.2.0';
+  $Template::Caribou::Formatter::Twig::VERSION = '0.2.1';
 }
 
 use strict;
@@ -53,11 +53,11 @@ Template::Caribou::Formatter::Twig
 
 =head1 VERSION
 
-version 0.2.0
+version 0.2.1
 
 =head1 AUTHOR
 
-Yanick Champoux
+Yanick Champoux <yanick@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 

@@ -7,12 +7,15 @@ use Module::Build 0.3601;
 
 my %module_build_args = (
   "build_requires" => {
+    "Bar" => 0,
     "File::Find" => 0,
     "File::Temp" => 0,
     "Module::Build" => "0.3601",
+    "Moose::Util" => 0,
     "Test::More" => "0.88",
     "Test::Routine" => 0,
     "Test::Routine::Util" => 0,
+    "autodie" => 0,
     "perl" => "v5.10.0"
   },
   "configure_requires" => {
@@ -20,10 +23,10 @@ my %module_build_args = (
   },
   "dist_abstract" => "class-based HTML-centric templating system",
   "dist_author" => [
-    "Yanick Champoux"
+    "Yanick Champoux <yanick\@cpan.org>"
   ],
   "dist_name" => "Template-Caribou",
-  "dist_version" => "0.2.0",
+  "dist_version" => "0.2.1",
   "license" => "perl",
   "module_name" => "Template::Caribou",
   "recommends" => {},

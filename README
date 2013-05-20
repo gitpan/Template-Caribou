@@ -2,7 +2,7 @@ NAME
     Template::Caribou - class-based HTML-centric templating system
 
 VERSION
-    version 0.2.0
+    version 0.2.1
 
 SYNOPSIS
         package MyTemplate;
@@ -72,7 +72,7 @@ SEE ALSO
     Template::Declare
 
 AUTHOR
-    Yanick Champoux
+    Yanick Champoux <yanick@cpan.org>
 
 COPYRIGHT AND LICENSE
     This software is copyright (c) 2013 by Yanick Champoux.

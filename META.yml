@@ -1,19 +1,22 @@
 ---
 abstract: 'class-based HTML-centric templating system'
 author:
-  - 'Yanick Champoux'
+  - 'Yanick Champoux <yanick@cpan.org>'
 build_requires:
+  Bar: 0
   File::Find: 0
   File::Temp: 0
   Module::Build: 0.3601
+  Moose::Util: 0
   Test::More: 0.88
   Test::Routine: 0
   Test::Routine::Util: 0
+  autodie: 0
   perl: v5.10.0
 configure_requires:
   Module::Build: 0.3601
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300028, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Dist::Zilla version 4.300030, CPAN::Meta::Converter version 2.120921'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -22,34 +25,34 @@ name: Template-Caribou
 provides:
   Template::Caribou:
     file: lib/Template/Caribou.pm
-    version: v0.2.0
+    version: v0.2.1
   Template::Caribou::Files:
     file: lib/Template/Caribou/Files.pm
-    version: v0.2.0
+    version: v0.2.1
   Template::Caribou::Formatter:
     file: lib/Template/Caribou/Formatter.pm
-    version: v0.2.0
+    version: v0.2.1
   Template::Caribou::Formatter::Twig:
     file: lib/Template/Caribou/Formatter/Twig.pm
-    version: v0.2.0
+    version: v0.2.1
   Template::Caribou::Manual:
     file: lib/Template/Caribou/Manual.pod
-    version: v0.2.0
+    version: v0.2.1
   Template::Caribou::Tags:
     file: lib/Template/Caribou/Tags.pm
-    version: v0.2.0
+    version: v0.2.1
   Template::Caribou::Tags::Bootstrap:
     file: lib/Template/Caribou/Tags/Bootstrap.pm
-    version: v0.2.0
+    version: v0.2.1
   Template::Caribou::Tags::HTML:
     file: lib/Template/Caribou/Tags/HTML.pm
-    version: v0.2.0
+    version: v0.2.1
   Template::Caribou::Tags::HTML::Extended:
     file: lib/Template/Caribou/Tags/HTML/Extended.pm
-    version: v0.2.0
+    version: v0.2.1
   Template::Caribou::Utils:
     file: lib/Template/Caribou/Utils.pm
-    version: v0.2.0
+    version: v0.2.1
 requires:
   CSS::LESSp: 0
   Carp: 0
@@ -74,7 +77,7 @@ resources:
   bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=Template-Caribou
   homepage: http://search.cpan.org/dist/Template-Caribou/
   repository: https://github.com/yanick/Template-Caribou.git
-version: 0.2.0
+version: 0.2.1
 x_author_pledge:
   version: 1
 x_authority: cpan:YANICK

@@ -1,5 +1,12 @@
 Revision history for Template-Caribou
 
+0.2.1 2013-05-20
+ [BUG FIXES]
+ - Inherited templates couldn't be found.
+
+ [STATISTICS]
+ - code churn: 10 files changed, 110 insertions(+), 10 deletions(-)
+
 0.2.0 2013-02-22
  [ENHANCEMENTS]
  - Adding documentation

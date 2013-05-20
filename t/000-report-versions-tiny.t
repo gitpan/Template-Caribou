@@ -48,6 +48,7 @@ sub pmver {
     return sprintf('%-45s => %-10s%-15s%s', $module, $pmver, $wanted, "\n");
 }
 
+eval { $v .= pmver('Bar','any version') };
 eval { $v .= pmver('CSS::LESSp','any version') };
 eval { $v .= pmver('Carp','any version') };
 eval { $v .= pmver('File::Find','any version') };
@@ -58,6 +59,7 @@ eval { $v .= pmver('Module::Build','0.3601') };
 eval { $v .= pmver('Moose','any version') };
 eval { $v .= pmver('Moose::Exporter','any version') };
 eval { $v .= pmver('Moose::Role','any version') };
+eval { $v .= pmver('Moose::Util','any version') };
 eval { $v .= pmver('MooseX::ClassAttribute','any version') };
 eval { $v .= pmver('MooseX::Role::Parameterized','any version') };
 eval { $v .= pmver('MooseX::SemiAffordanceAccessor','any version') };
@@ -69,6 +71,7 @@ eval { $v .= pmver('Test::Routine::Util','any version') };
 eval { $v .= pmver('Text::MultiMarkdown','any version') };
 eval { $v .= pmver('Tie::Handle','any version') };
 eval { $v .= pmver('XML::Twig','any version') };
+eval { $v .= pmver('autodie','any version') };
 eval { $v .= pmver('overload','any version') };
 eval { $v .= pmver('parent','any version') };
 eval { $v .= pmver('strict','any version') };

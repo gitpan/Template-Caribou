@@ -4,7 +4,7 @@ Template::Caribou - class-based HTML-centric templating system
 
 # VERSION
 
-version 0.2.0
+version 0.2.1
 
 # SYNOPSIS
 
@@ -83,7 +83,7 @@ introducing [Template::Caribou](http://search.cpan.org/perldoc?Template::Caribou
 
 # AUTHOR
 
-Yanick Champoux [![endorse](http://api.coderwall.com/yanick/endorsecount.png)](http://coderwall.com/yanick)
+Yanick Champoux <yanick@cpan.org> [![endorse](http://api.coderwall.com/yanick/endorsecount.png)](http://coderwall.com/yanick)
 
 # COPYRIGHT AND LICENSE
 

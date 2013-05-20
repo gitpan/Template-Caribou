@@ -3,7 +3,7 @@ BEGIN {
   $Template::Caribou::Tags::HTML::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $Template::Caribou::Tags::HTML::VERSION = '0.2.0';
+  $Template::Caribou::Tags::HTML::VERSION = '0.2.1';
 }
 
 use strict;
@@ -14,9 +14,13 @@ use Template::Caribou::Utils;
 BEGIN {
     @Template::Caribou::Tags::HTML::TAGS =  qw/
         p html head h1 h2 h3 h4 h5 h6 body emphasis div
-        style title span li ol ul i b bold a form input
+        sup
+        style title span li ol ul i b bold a 
         label link img section article
         table thead tbody table_row th td
+        fieldset legend form input select option button
+        small
+        textarea
     /;
 }
 
@@ -47,11 +51,11 @@ Template::Caribou::Tags::HTML
 
 =head1 VERSION
 
-version 0.2.0
+version 0.2.1
 
 =head1 AUTHOR
 
-Yanick Champoux
+Yanick Champoux <yanick@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 

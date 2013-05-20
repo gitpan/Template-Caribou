@@ -3,7 +3,7 @@ BEGIN {
   $Template::Caribou::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $Template::Caribou::VERSION = '0.2.0';
+  $Template::Caribou::VERSION = '0.2.1';
 }
 # ABSTRACT: class-based HTML-centric templating system
 
@@ -63,7 +63,7 @@ method set_template($name,$value) {
 }
 
 method t($name) {
-    my $method = $self->meta->get_method( "template $name" )
+    my $method = $self->meta->find_method_by_name( "template $name" )
         or die "template '$name' not found\n";
     return $method->body;
 }
@@ -120,8 +120,6 @@ sub render {
     $output = Template::Caribou::String->new( $output ) 
         if $Template::Caribou::IN_RENDER;
 
-    $DB::single = 1;
-
     print ::RAW $output if $Template::Caribou::IN_RENDER and not defined wantarray;
 
     if( !$Template::Caribou::IN_RENDER and $self->has_formatter ) {
@@ -151,7 +149,7 @@ Template::Caribou - class-based HTML-centric templating system
 
 =head1 VERSION
 
-version 0.2.0
+version 0.2.1
 
 =head1 SYNOPSIS
 
@@ -230,7 +228,7 @@ L<Template::Declare>
 
 =head1 AUTHOR
 
-Yanick Champoux
+Yanick Champoux <yanick@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 

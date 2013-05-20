@@ -3,7 +3,7 @@ BEGIN {
   $Template::Caribou::Tags::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $Template::Caribou::Tags::VERSION = '0.2.0';
+  $Template::Caribou::Tags::VERSION = '0.2.1';
 }
 #ABSTRACT: generates tags functions for Caribou templates
 
@@ -72,8 +72,6 @@ sub render_tag {
         tie *STDOUT, 'Template::Caribou::Output';
         tie *::RAW, 'Template::Caribou::OutputRaw';
 
-        $DB::single = 1;
-
         my $res = ref $inner_sub ? $inner_sub->() : $inner_sub;
 
         $inner = $Template::Caribou::OUTPUT 
@@ -90,7 +88,6 @@ sub render_tag {
         $attrs .= qq{ $_="$attr{$_}"};
     }
 
-    $DB::single = 1;
     no warnings qw/ uninitialized /;
     my $output = $inner 
         ? Template::Caribou::String->new( "<${tag}$attrs>$inner</$tag>" ) 
@@ -112,11 +109,11 @@ Template::Caribou::Tags - generates tags functions for Caribou templates
 
 =head1 VERSION
 
-version 0.2.0
+version 0.2.1
 
 =head1 AUTHOR
 
-Yanick Champoux
+Yanick Champoux <yanick@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
