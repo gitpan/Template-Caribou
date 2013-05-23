@@ -14,7 +14,7 @@ Template::Caribou::Manual - User Guide to Template::Caribou
 
 =head1 VERSION
 
-version 0.2.1
+version 0.2.2
 
 =head1 DESCRIPTION
 

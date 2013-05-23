@@ -3,7 +3,7 @@ BEGIN {
   $Template::Caribou::Formatter::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $Template::Caribou::Formatter::VERSION = '0.2.1';
+  $Template::Caribou::Formatter::VERSION = '0.2.2';
 }
 
 use strict;
@@ -25,7 +25,7 @@ Template::Caribou::Formatter
 
 =head1 VERSION
 
-version 0.2.1
+version 0.2.2
 
 =head1 AUTHOR
 

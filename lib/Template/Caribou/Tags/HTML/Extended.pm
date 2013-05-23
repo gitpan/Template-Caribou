@@ -3,7 +3,7 @@ BEGIN {
   $Template::Caribou::Tags::HTML::Extended::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $Template::Caribou::Tags::HTML::Extended::VERSION = '0.2.1';
+  $Template::Caribou::Tags::HTML::Extended::VERSION = '0.2.2';
 }
 # ABSTRACT: custom HTML tags optimized for DWIMery
 
@@ -150,7 +150,7 @@ Template::Caribou::Tags::HTML::Extended - custom HTML tags optimized for DWIMery
 
 =head1 VERSION
 
-version 0.2.1
+version 0.2.2
 
 =head1 SYNOPSIS
 

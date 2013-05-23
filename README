@@ -2,7 +2,7 @@ NAME
     Template::Caribou - class-based HTML-centric templating system
 
 VERSION
-    version 0.2.1
+    version 0.2.2
 
 SYNOPSIS
         package MyTemplate;
