@@ -3,7 +3,7 @@ BEGIN {
   $Template::Caribou::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $Template::Caribou::VERSION = '0.2.2';
+  $Template::Caribou::VERSION = '0.2.3';
 }
 # ABSTRACT: class-based HTML-centric templating system
 
@@ -109,6 +109,7 @@ sub render {
         local %Template::Caribou::attr;
         tie *STDOUT, 'Template::Caribou::Output';
         tie *::RAW, 'Template::Caribou::OutputRaw';
+        select STDOUT;
         my $res = $method->( $self, @args );
 
         $Template::Caribou::OUTPUT 
@@ -149,7 +150,7 @@ Template::Caribou - class-based HTML-centric templating system
 
 =head1 VERSION
 
-version 0.2.2
+version 0.2.3
 
 =head1 SYNOPSIS
 

@@ -3,7 +3,7 @@ BEGIN {
   $Template::Caribou::Formatter::Twig::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $Template::Caribou::Formatter::Twig::VERSION = '0.2.2';
+  $Template::Caribou::Formatter::Twig::VERSION = '0.2.3';
 }
 
 use strict;
@@ -53,7 +53,7 @@ Template::Caribou::Formatter::Twig
 
 =head1 VERSION
 
-version 0.2.2
+version 0.2.3
 
 =head1 AUTHOR
 

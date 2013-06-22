@@ -3,7 +3,7 @@ BEGIN {
   $Template::Caribou::Tags::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $Template::Caribou::Tags::VERSION = '0.2.2';
+  $Template::Caribou::Tags::VERSION = '0.2.3';
 }
 #ABSTRACT: generates tags functions for Caribou templates
 
@@ -109,7 +109,7 @@ Template::Caribou::Tags - generates tags functions for Caribou templates
 
 =head1 VERSION
 
-version 0.2.2
+version 0.2.3
 
 =head1 AUTHOR
 

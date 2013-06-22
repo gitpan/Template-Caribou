@@ -3,7 +3,7 @@ BEGIN {
   $Template::Caribou::Files::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $Template::Caribou::Files::VERSION = '0.2.2';
+  $Template::Caribou::Files::VERSION = '0.2.3';
 }
 #ABSTRACT: Role to load templates from files
 
@@ -129,7 +129,7 @@ Template::Caribou::Files - Role to load templates from files
 
 =head1 VERSION
 
-version 0.2.2
+version 0.2.3
 
 =head1 SYNOPSIS
 
