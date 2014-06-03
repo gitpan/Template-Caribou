@@ -2,10 +2,7 @@ package Template::Caribou::Tags::HTML;
 BEGIN {
   $Template::Caribou::Tags::HTML::AUTHORITY = 'cpan:YANICK';
 }
-{
-  $Template::Caribou::Tags::HTML::VERSION = '0.2.3';
-}
-
+$Template::Caribou::Tags::HTML::VERSION = '0.2.4';
 use strict;
 use warnings;
 
@@ -45,13 +42,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Template::Caribou::Tags::HTML
 
 =head1 VERSION
 
-version 0.2.3
+version 0.2.4
 
 =head1 AUTHOR
 
@@ -59,7 +58,7 @@ Yanick Champoux <yanick@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Yanick Champoux.
+This software is copyright (c) 2014 by Yanick Champoux.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
